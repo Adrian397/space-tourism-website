@@ -1,0 +1,13 @@
+.cross {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .cross {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    margin-right: 3rem;
+    z-index: 1;
+  }
+}

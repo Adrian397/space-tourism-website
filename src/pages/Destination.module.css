@@ -1,0 +1,27 @@
+.body {
+  background: url("../assets/destination/background-destination-desktop.jpg")
+    no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.main {
+  margin-top: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 900px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .body {
+    background: url("../assets/destination/background-destination-mobile.jpg")
+      no-repeat center;
+    background-size: cover;
+  }
+}

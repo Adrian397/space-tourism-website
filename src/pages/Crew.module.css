@@ -1,0 +1,24 @@
+.body {
+  background: url("../assets/crew/background-crew-desktop.jpg") no-repeat bottom;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 900px) {
+  .main {
+    flex-direction: column-reverse;
+  }
+
+  .body {
+    background: url("../assets/crew/background-crew-mobile.jpg") no-repeat
+      center;
+    background-size: cover;
+    min-height: 100vh;
+  }
+}

@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: url("./assets/home/background-home-desktop.jpg") no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6rem;
+}
+
+.notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: white;
+  text-transform: uppercase;
+  font-size: 10rem;
+}
+
+@media (max-width: 900px) {
+  body {
+    background: url("./assets/home/background-home-mobile.jpg") no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+    overflow: visible;
+    overflow-x: hidden;
+  }
+}

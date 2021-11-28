@@ -1,0 +1,104 @@
+.planetDescription {
+  padding: 0.7rem;
+  height: 500px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
+.buttons button {
+  margin-right: 2rem;
+  border: none;
+  background: none;
+  color: #d0d6f9;
+  cursor: pointer;
+  padding: 0.5rem 0rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.2rem;
+}
+
+.buttons button.active {
+  border-bottom: 2px solid white;
+}
+
+.buttons button.not-active:hover {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.text {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #979797;
+  color: #d0d6f9;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+  line-height: 0.5rem;
+}
+
+.planetDescription p {
+  line-height: 1.7rem;
+}
+
+.planetDescription h1 {
+  font-size: 5rem;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+}
+
+.facts {
+  display: flex;
+  justify-content: space-evenly;
+  text-transform: uppercase;
+}
+
+.facts p {
+  font-size: 0.8rem;
+  color: #d0d6f9;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
+
+.facts p + p {
+  font-size: 1.4rem;
+  color: white;
+  margin-right: 4rem;
+  font-family: "Bellefair", serif;
+}
+
+@media (max-width: 900px) {
+  .planetDescription h1 {
+    margin: 0 auto;
+  }
+
+  .buttons {
+    margin: 0 auto;
+  }
+
+  .buttons button:last-child {
+    margin-right: 0px;
+  }
+
+  .facts {
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 0.5rem;
+  }
+
+  .facts > div {
+    margin-bottom: 0.7rem;
+  }
+
+  .facts p + p {
+    margin: 0 auto;
+  }
+
+  .text {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

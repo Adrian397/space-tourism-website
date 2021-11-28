@@ -1,0 +1,14 @@
+.home {
+  margin-top: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .home {
+    margin-top: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

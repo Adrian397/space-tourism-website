@@ -1,0 +1,88 @@
+.crew-introduction {
+  height: 400px;
+  width: 500px;
+}
+
+.crew-introduction p {
+  color: #d0d6f9;
+  line-height: 1.9rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  font-family: "Barlow Condensed", sans-serif;
+
+  font-size: 1.2rem;
+}
+
+.crew-introduction h2 {
+  margin-bottom: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+}
+
+.crew-introduction h1 {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+  font-weight: 400;
+  font-size: 2.7rem;
+}
+
+.buttons button {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  border: none;
+  background: #979797;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.buttons button.active {
+  background: white;
+}
+
+.buttons button.not-active:hover {
+  background: #97979773;
+}
+
+.buttons {
+  margin-top: 7rem;
+}
+
+@media (max-width: 900px) {
+  .crew-introduction {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .crew-introduction > div:first-child {
+    margin-bottom: 10rem;
+  }
+
+  .buttons {
+    margin-bottom: 1.5rem;
+  }
+
+  .crew-introduction > div h2 {
+    font-size: 1rem;
+  }
+
+  .crew-introduction > div h1 {
+    font-size: 1.5rem;
+  }
+
+  .crew-introduction > div p {
+    font-size: 0.9rem;
+    padding: 0 1.5rem;
+  }
+}

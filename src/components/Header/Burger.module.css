@@ -1,0 +1,13 @@
+.burger {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .burger {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    margin-right: 3rem;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,15 @@
+.line {
+  width: 600px;
+  height: 1px;
+  background-color: #979797;
+  position: absolute;
+  top: 35px;
+  left: -60%;
+  z-index: 1;
+}
+
+@media (max-width: 1750px) {
+  .line {
+    display: none;
+  }
+}

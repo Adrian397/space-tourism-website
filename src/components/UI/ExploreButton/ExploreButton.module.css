@@ -1,0 +1,46 @@
+.explore-container {
+  flex: 1;
+  height: 400px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.explore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: white;
+  margin-bottom: 3rem;
+  position: relative;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-family: "Bellefair", serif;
+  font-size: 1.6rem;
+}
+
+.explore::after {
+  content: "";
+  width: 220px;
+  height: 220px;
+  transition: all 0.3s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.explore:hover::after {
+  transform: scale(1.5);
+}
+
+@media (max-width: 900px) {
+  .explore-container {
+    margin-top: 3.5rem;
+  }
+}
