@@ -1,6 +1,6 @@
 import styles from "./CrewIntroduction.module.css";
 import { CrewContext } from "../../store/crew-context";
-import { useContext } from "react/cjs/react.development";
+import { useContext } from "react";
 
 const CrewIntroduction = (props) => {
   const ctx = useContext(CrewContext);
