@@ -14,22 +14,34 @@ const Navigation = () => {
       <Line />
       <ul>
         <li>
-          <NavLink to="/home">
+          <NavLink to="/home" onClick={ctx.closeMenu}>
             <span>00</span>HOME
           </NavLink>
         </li>
         <li>
-          <NavLink to="/destination" activeClassName={styles.selected}>
+          <NavLink
+            to="/destination"
+            activeClassName={styles.selected}
+            onClick={ctx.closeMenu}
+          >
             <span>01</span>DESTINATION
           </NavLink>
         </li>
         <li>
-          <NavLink to="/crew" activeClassName={styles.selected}>
+          <NavLink
+            to="/crew"
+            activeClassName={styles.selected}
+            onClick={ctx.closeMenu}
+          >
             <span>02</span>CREW
           </NavLink>
         </li>
         <li>
-          <NavLink to="/technology" activeClassName={styles.selected}>
+          <NavLink
+            to="/technology"
+            activeClassName={styles.selected}
+            onClick={ctx.closeMenu}
+          >
             <span>03</span>TECHNOLOGY
           </NavLink>
         </li>

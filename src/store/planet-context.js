@@ -5,10 +5,7 @@ export const PlanetContext = React.createContext({
   planets: [],
   activePlanet: undefined,
   activeButton: undefined,
-  onChooseMoon: () => {},
-  onChooseMars: () => {},
-  onChooseEuropa: () => {},
-  onChooseTitan: () => {},
+  setPlanetHandler: () => {},
 });
 
 const PlanetContextProvider = (props) => {
@@ -25,6 +22,7 @@ const PlanetContextProvider = (props) => {
       .then((data) => {
         const transformedData = data.destinations.map((destination) => {
           return {
+            id: destination.id,
             name: destination.name,
             img: destination.images.png,
             desc: destination.description,
@@ -43,42 +41,39 @@ const PlanetContextProvider = (props) => {
     }
   }, [activePlanet, planets]);
 
-  const setMoonHandler = () => {
-    setActivePlanet(planets[0]);
-    setActiveButton("moon");
-  };
-
-  const setMarsHandler = () => {
-    setActivePlanet(planets[1]);
-    setActiveButton("mars");
-  };
-
-  const setEuropaHandler = () => {
-    setActivePlanet(planets[2]);
-    setActiveButton("europa");
-  };
-
-  const setTitanHandler = () => {
-    setActivePlanet(planets[3]);
-    setActiveButton("titan");
+  const setPlanetHandler = (e) => {
+    if (e.target.id === "0") {
+      setActivePlanet(planets[0]);
+      setActiveButton("moon");
+    } else if (e.target.id === "1") {
+      setActivePlanet(planets[1]);
+      setActiveButton("mars");
+    } else if (e.target.id === "2") {
+      setActivePlanet(planets[2]);
+      setActiveButton("europa");
+    } else if (e.target.id === "3") {
+      setActivePlanet(planets[3]);
+      setActiveButton("titan");
+    }
   };
 
   const menuClickHandler = () => {
     setIsClicked((currentState) => !currentState);
   };
 
+  const closeMenu = () => {
+    setIsClicked(false);
+  };
   return (
     <PlanetContext.Provider
       value={{
-        planets: planets,
-        activePlanet: activePlanet,
-        activeButton: activeButton,
-        isClicked: isClicked,
-        onChooseMoon: setMoonHandler,
-        onChooseMars: setMarsHandler,
-        onChooseEuropa: setEuropaHandler,
-        onChooseTitan: setTitanHandler,
+        planets,
+        activePlanet,
+        activeButton,
+        isClicked,
+        setPlanetHandler,
         onClickMenu: menuClickHandler,
+        closeMenu,
       }}
     >
       {props.children}

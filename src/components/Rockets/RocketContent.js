@@ -9,32 +9,35 @@ const RocketContent = (props) => {
     <div className={styles.content}>
       <div className={styles["content-numbers"]}>
         <button
+          id="0"
           className={
             ctx.activeButton === "launch-vehicle"
               ? styles.active
               : styles["not-active"]
           }
-          onClick={ctx.onChooseLaunchVehicle}
+          onClick={ctx.setSpaceTechnology}
         >
           1
         </button>
         <button
+          id="1"
           className={
             ctx.activeButton === "space-port"
               ? styles.active
               : styles["not-active"]
           }
-          onClick={ctx.onChooseSpaceport}
+          onClick={ctx.setSpaceTechnology}
         >
           2
         </button>
         <button
+          id="2"
           className={
             ctx.activeButton === "space-capsule"
               ? styles.active
               : styles["not-active"]
           }
-          onClick={ctx.onChooseSpaceCapsule}
+          onClick={ctx.setSpaceTechnology}
         >
           3
         </button>

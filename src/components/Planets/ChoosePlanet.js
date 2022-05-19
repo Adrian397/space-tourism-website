@@ -12,7 +12,8 @@ const ChoosePlanet = (props) => {
           className={
             ctx.activeButton === "moon" ? styles.active : styles["not-active"]
           }
-          onClick={ctx.onChooseMoon}
+          onClick={ctx.setPlanetHandler}
+          id="0"
         >
           MOON
         </button>
@@ -20,7 +21,8 @@ const ChoosePlanet = (props) => {
           className={
             ctx.activeButton === "mars" ? styles.active : styles["not-active"]
           }
-          onClick={ctx.onChooseMars}
+          onClick={ctx.setPlanetHandler}
+          id="1"
         >
           MARS
         </button>
@@ -28,7 +30,8 @@ const ChoosePlanet = (props) => {
           className={
             ctx.activeButton === "europa" ? styles.active : styles["not-active"]
           }
-          onClick={ctx.onChooseEuropa}
+          onClick={ctx.setPlanetHandler}
+          id="2"
         >
           EUROPA
         </button>
@@ -36,7 +39,8 @@ const ChoosePlanet = (props) => {
           className={
             ctx.activeButton === "titan" ? styles.active : styles["not-active"]
           }
-          onClick={ctx.onChooseTitan}
+          onClick={ctx.setPlanetHandler}
+          id="3"
         >
           TITAN
         </button>

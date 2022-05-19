@@ -6,10 +6,7 @@ export const CrewContext = React.createContext({
   activeCrew: undefined,
   activeButton: undefined,
   setCrew: () => {},
-  onChooseFirstPerson: () => {},
-  onChooseSecondPerson: () => {},
-  onChooseThirdPerson: () => {},
-  onChooseFourthPerson: () => {},
+  showPersonHandler: () => {},
 });
 
 const CrewContextProvider = (props) => {
@@ -33,7 +30,7 @@ const CrewContextProvider = (props) => {
         });
         setCrew(transformedData);
       });
-  });
+  }, []);
 
   useEffect(() => {
     if (!activeCrew && crew.length > 0) {
@@ -42,37 +39,30 @@ const CrewContextProvider = (props) => {
     }
   }, [activeCrew, crew]);
 
-  const setFirstPerson = () => {
-    setActiveCrew(crew[0]);
-    setActiveButton("first-person");
-  };
-
-  const setSecondPerson = () => {
-    setActiveCrew(crew[1]);
-    setActiveButton("second-person");
-  };
-
-  const setThirdPerson = () => {
-    setActiveCrew(crew[2]);
-    setActiveButton("third-person");
-  };
-
-  const setFourthPerson = () => {
-    setActiveCrew(crew[3]);
-    setActiveButton("fourth-person");
+  const showPersonHandler = (e) => {
+    if (e.target.id === "0") {
+      setActiveCrew(crew[0]);
+      setActiveButton("first-person");
+    } else if (e.target.id === "1") {
+      setActiveCrew(crew[1]);
+      setActiveButton("second-person");
+    } else if (e.target.id === "2") {
+      setActiveCrew(crew[2]);
+      setActiveButton("third-person");
+    } else if (e.target.id === "3") {
+      setActiveCrew(crew[3]);
+      setActiveButton("fourth-person");
+    }
   };
 
   return (
     <CrewContext.Provider
       value={{
-        crew: crew,
-        activeCrew: activeCrew,
-        activeButton: activeButton,
-        setCrew: setCrew,
-        onChooseFirstPerson: setFirstPerson,
-        onChooseSecondPerson: setSecondPerson,
-        onChooseThirdPerson: setThirdPerson,
-        onChooseFourthPerson: setFourthPerson,
+        crew,
+        activeCrew,
+        activeButton,
+        setCrew,
+        showPersonHandler,
       }}
     >
       {props.children}

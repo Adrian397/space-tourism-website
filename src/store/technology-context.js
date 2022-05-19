@@ -6,9 +6,7 @@ export const TechnologyContext = React.createContext({
   activeTechnology: undefined,
   activeButton: undefined,
   setTechnology: () => {},
-  onChooseLaunchVehicle: () => {},
-  onChooseSpaceport: () => {},
-  onChooseSpaceCapsule: () => {},
+  setSpaceTechnology: () => {},
 });
 
 const TechnologyContextProvider = (props) => {
@@ -41,31 +39,27 @@ const TechnologyContextProvider = (props) => {
     }
   }, [activeTechnology, technology]);
 
-  const setLaunchVehicle = () => {
-    setActiveTechnology(technology[0]);
-    setActiveButton("launch-vehicle");
-  };
-
-  const setSpaceport = () => {
-    setActiveTechnology(technology[1]);
-    setActiveButton("space-port");
-  };
-
-  const setSpaceCapsule = () => {
-    setActiveTechnology(technology[2]);
-    setActiveButton("space-capsule");
+  const setSpaceTechnology = (e) => {
+    if (e.target.id === "0") {
+      setActiveTechnology(technology[0]);
+      setActiveButton("launch-vehicle");
+    } else if (e.target.id === "1") {
+      setActiveTechnology(technology[1]);
+      setActiveButton("space-port");
+    } else if (e.target.id === "2") {
+      setActiveTechnology(technology[2]);
+      setActiveButton("space-capsule");
+    }
   };
 
   return (
     <TechnologyContext.Provider
       value={{
-        technology: technology,
-        activeTechnology: activeTechnology,
-        activeButton: activeButton,
-        setTechnology: setTechnology,
-        onChooseLaunchVehicle: setLaunchVehicle,
-        onChooseSpaceCapsule: setSpaceCapsule,
-        onChooseSpaceport: setSpaceport,
+        technology,
+        activeTechnology,
+        activeButton,
+        setTechnology,
+        setSpaceTechnology,
       }}
     >
       {props.children}

@@ -12,6 +12,7 @@ const Crew = () => {
   return (
     <div className={styles.body}>
       <Header />
+
       <Title number="02" title="meet your crew" />
       <main className={styles.main}>
         {ctx.activeCrew && (

@@ -14,36 +14,40 @@ const CrewIntroduction = (props) => {
       </div>
       <div className={styles.buttons}>
         <button
+          id="0"
           className={
             ctx.activeButton === "first-person"
               ? styles.active
               : styles["not-active"]
           }
-          onClick={ctx.onChooseFirstPerson}
+          onClick={ctx.showPersonHandler}
         ></button>
         <button
+          id="1"
           className={
             ctx.activeButton === "second-person"
               ? styles.active
               : styles["not-active"]
           }
-          onClick={ctx.onChooseSecondPerson}
+          onClick={ctx.showPersonHandler}
         ></button>
         <button
+          id="2"
           className={
             ctx.activeButton === "third-person"
               ? styles.active
               : styles["not-active"]
           }
-          onClick={ctx.onChooseThirdPerson}
+          onClick={ctx.showPersonHandler}
         ></button>
         <button
+          id="3"
           className={
             ctx.activeButton === "fourth-person"
               ? styles.active
               : styles["not-active"]
           }
-          onClick={ctx.onChooseFourthPerson}
+          onClick={ctx.showPersonHandler}
         ></button>
       </div>
     </div>
